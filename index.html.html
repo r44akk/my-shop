@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1c1b19;
+    --bg-elevated: #26241f;
+    --rust: #b5451b;
+    --rust-bright: #d9591f;
+    --steel: #8a8577;
+    --cream: #f2ece0;
+    --line: rgba(242,236,224,0.12);
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .badge {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--rust);
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .badge::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 2px solid var(--bg);
+    border-radius: 50%;
+  }
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px;
+  }
+  header p {
+    color: var(--steel);
+    font-size: 14.5px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card .kicker {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--rust-bright);
+    font-weight: 600;
+  }
+  .card h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.2px;
+  }
+  .card p:empty { display: none; }
+  .card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #d8d2c4;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+  }
+  .price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--cream);
+  }
+  a.buy {
+    background: var(--rust);
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 11px 20px;
+    border-radius: 7px;
+    transition: background 0.15s ease;
+    display: inline-block;
+  }
+  a.buy:active { background: var(--rust-bright); }
+.category {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--steel);
+    margin: 28px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .category:first-of-type { margin-top: 0; }
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--steel);
+    line-height: 1.6;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #1c1b19;
+      --bg-elevated: #26241f;
+      --cream: #f2ece0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge"></div>
+      <h1>My Amazon Picks</h1>
+      <p>Everything I use and recommend, one tap away.</p>
+    </header>
+
+    <div class="category">HOME</div>
+    <div class="list">
+      <div class="card">
+        <span class="kicker">HOME IMPROVEMENT</span>
+        <h2>Polar Radiator Spray Paint</h2>
+        <p>Heat-resistant gloss white, 400ml. 3-in-1 primer, undercoat &amp; topcoat for radiators, pipes and towel rails — heat-resistant to 170°C. This is the one I actually use.</p>
+        <div class="row" style="justify-content:flex-end;">
+          <a class="buy" href="https://amzn.eu/d/00UzInTY?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">RAK'S ROOM</div>
+    <div class="list">
+      <div class="card">
+        <h2>Electric Standing Desk</h2>
+        <p>Electric height-adjustable standing desk for the home office.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://www.amazon.co.uk/dp/B07K414CSX?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Wall Panelling</h2>
+        <p>Wall panelling used to add texture to the room.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://www.amazon.co.uk/dp/B0CBZ2RKBS?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Wireless Charger Stand</h2>
+        <p>Anker MagGo 3-in-1 Qi2 15W magnetic wireless charging dock stand.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://www.amazon.co.uk/dp/B0DGXKXKLC?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Monitor Arm</h2>
+        <p>Adjustable monitor arm to free up desk space.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B0cRoOG4H?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Keyboard</h2>
+        <p>The keyboard I use at my desk.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <span style="font-size:13px;color:var(--steel);">Link coming soon</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Speaker</h2>
+        <p>The speaker set up on my desk.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B06AXFgdE?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Rug</h2>
+        <p>The rug in this room.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B0ezy9q7q?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Desk Mat</h2>
+        <p>Desk mat that sits under the keyboard and mouse.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B01GAEhtx?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Bonsai Tree for Desk</h2>
+        <p>Small bonsai tree for the desk.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B00h1khIe?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>3-Way Barber Mirror</h2>
+        <p>3-way barber mirror for grooming.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B00h1khIe?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Lightshade</h2>
+        <p>The lightshade used in this room.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B0053qGOX?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Plant</h2>
+        <p>A plant used to decorate the room.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B0gF7WQMd?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Storage Bed</h2>
+        <p>Bed frame with built-in storage.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B08K1dyGS?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Small Plant</h2>
+        <p>A smaller plant for the desk or shelf.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B0bSgIjN8?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Google Home</h2>
+        <p>Google Home smart speaker.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <span style="font-size:13px;color:var(--steel);">Link coming soon</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Philips TV</h2>
+        <p>The Philips TV in this room.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <span style="font-size:13px;color:var(--steel);">Link coming soon</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Ikea Wardrobe</h2>
+        <p>Ikea wardrobe used for storage.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <span style="font-size:13px;color:var(--steel);">Link coming soon</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Frame Light</h2>
+        <p>Frame light used for ambient lighting.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/B0eogoGBx?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Cable Covers</h2>
+        <p>Cable covers to keep desk cables tidy.</p>
+        <div class="row">
+          <span class="price">—</span>
+          <a class="buy" href="https://link.amazon/A0iJdBeFv?tag=rak0d69-21" target="_blank" rel="noopener">Shop on Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      More picks added regularly.
+    </footer>
+  </div>
+</body>
+</html>
